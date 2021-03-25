@@ -8,7 +8,6 @@ body {
 .divcard{
 
     background-image: url(../media/prueba_2x.png);
-    background-image: url(../media/tarjeta.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 700px;
