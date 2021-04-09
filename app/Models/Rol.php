@@ -18,7 +18,7 @@ class Rol extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function usuaris(): HasMany
+    public function usuaris()
     {
         return $this->hasMany(Usuari::class, 'rols_id');
     }
