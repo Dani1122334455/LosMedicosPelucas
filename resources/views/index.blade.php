@@ -10,10 +10,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="password" placeholder="Contraseña" value="{{ old('contrasenya')}}" required>
+            <input type="password" class="form-control" id="contrasenya" placeholder="Contraseña" value="{{ old('contrasenya')}}" required>
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('/prueba') }}"><i class="fa fa-sign-in" aria-hidden="true"></i>
+            &nbsp;&nbsp;Login
+        </a>
+    </li>
 </div>
 
 @endsection

@@ -12,26 +12,28 @@ class UsuariController extends Controller
 {
     public function showLogin()
     {
-        // $user = new Usuari();
+        $user = new Usuari();
 
-        // $user->correu = 'ffernandez@politecnics.barcelona';
-        // $user->nom = 'Francisco';
-        // $user->cognoms = 'Fernández Fernández';
-        // $user->contrasenya = \bcrypt('pepe');
-        // $user->actiu = true;
-        // $user->rols_id = 1;
+        $user->username = 'pepe123';
+        $user->contrasenya = \bcrypt('pepe');
+        $user->email = 'isartus@isartus.com';
+        $user->nom = 'Isartus';
+        $user->cognoms = "Romero Poblador";
+        $user->rols_id = 1;
+        $user->recursos_id = 1;
 
-        // $user->save();
-
-        return view('auth.login');
+        $user->save();
+        return view('index');
     }
 
     public function login(Request $request)
     {
-        $correu = $request->input('correu');
+
+
+        $username = $request->input('username');
         $contrasenya = $request->input('contrasenya');
 
-        $user = Usuari::where('correu', $correu)->first();
+        $user = Usuari::where('username', $username)->first();
 
         if ($user !=null && Hash::check($contrasenya, $user->contrasenya)) {
             Auth::login($user);
@@ -39,7 +41,7 @@ class UsuariController extends Controller
         }
         else {
             $request->session()->flash('error', 'Usuari o contrasenya incorrectes');
-            $response = redirect('/login')->withInput();
+            $response = redirect('/')->withInput();
         }
 
         return $response;
