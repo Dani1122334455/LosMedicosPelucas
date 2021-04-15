@@ -1,9 +1,9 @@
 @extends('templates.principal')
 
 @section('contenido')
+@include('partials.mensajes')
 
 <div class="divcard">
-
     <form class="col-sm-6" style="padding-top: 30%; margin-left:10%" action="{{action([App\Http\Controllers\UsuariController::class,'login'])}}" method="POST">
         @csrf
         <div class="form-group">
