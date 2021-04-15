@@ -1,47 +1,35 @@
-<html>
-<head>
-<link rel="stylesheet" href="../../../Cosasdelanterior/links/bootstrap.min.css">
-<link href="../../../Cosasdelanterior/FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
-<script src="../../../Cosasdelanterior//links/bootstrap.bundle.min.js"></script>
-<script src="../../../Cosasdelanterior/links/jquery-3.3.1.slim.min.js"></script>
-<link rel="stylesheet" href="../../../Cosasdelanterior/style/navbarcss.css">
-<script src="../../../Cosasdelanterior/js/navbarjs.js"></script>
-<script src="../../../Cosasdelanterior/js/bootstrap.min.js">></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+@extends('templates.principal')
 
 <!-- Include Date Range Picker -->
 <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
 <script>
-    $(document).ready(function () {
-        var date_input = $('input[name="date"]');
-        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-        date_input.datepicker({
-            format: 'mm/dd/yyyy',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-    });
+$(document).ready(function () {
+    var date_input = $('input[name="date"]');
+    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+    date_input.datepicker({
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+    })
+});
 
-    function mostrar() {
-    var x = document.getElementById('alerta');
-    if (x.style.display === 'block') {
-        x.style.display = 'none';
-    } else {
-        x.style.display = 'block';
-        }
-    };
+function mostrar() {
+var x = document.getElementById('alerta');
+if (x.style.display === 'block') {
+    x.style.display = 'none';
+} else {
+    x.style.display = 'block';
+    }
+};
 </script>
-</head>
-<body>
+
+@section('contenido')
+
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
     <div class="py-4 px-3 mb-4 bg-light">
@@ -467,5 +455,4 @@
     </div>
 
 </div>
-</body>
-</html>
+@endsection
