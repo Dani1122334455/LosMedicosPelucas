@@ -29,7 +29,5 @@ Route::get('/admin', function () {
 Route::get('/ambulancia', function () {
     return view('Ambulancia.ambulancia');
 });
-Route::get('/videos', function () {
-    return view('videos.videos');
-});
+
 

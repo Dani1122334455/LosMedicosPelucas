@@ -14,12 +14,12 @@ class UsuariController extends Controller
     {
         $user = new Usuari();
 
-        $user->username = 'pepe';
+        $user->username = 'manolo';
         $user->contrasenya = \bcrypt('pepe');
-        $user->email = 'isartus@isartus.com';
-        $user->nom = 'Isartus';
+        $user->email = 'manolo@isartus.com';
+        $user->nom = 'Manolo';
         $user->cognoms = "Romero Poblador";
-        $user->rols_id = 1;
+        $user->rols_id = 3;
         $user->recursos_id = 1;
 
         $user->save();
@@ -41,10 +41,8 @@ class UsuariController extends Controller
                 $response = redirect('/admin');
             } else if ($user->rols_id == 2) {
                 $response = redirect('/administrativo');
-
             }else if ($user->rols_id == 3) {
                 $response = redirect('/ambulancia');
-
             }
         } else {
             $request->session()->flash('error', 'Usuari o contrasenya incorrectes');
