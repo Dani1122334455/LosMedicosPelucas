@@ -23,7 +23,7 @@
         }
     };
 </script>
-</head>
+
 <body>
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
@@ -107,5 +107,5 @@
         <p>Ambulancia</p>
     </div>
 </div>
-</body>
-</html>
+
+@endsection
