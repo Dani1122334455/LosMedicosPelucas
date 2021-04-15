@@ -41,8 +41,10 @@ class UsuariController extends Controller
                 $response = redirect('/admin');
             } else if ($user->rols_id == 2) {
                 $response = redirect('/administrativo');
+
             }else if ($user->rols_id == 3) {
                 $response = redirect('/ambulancia');
+
             }
         } else {
             $request->session()->flash('error', 'Usuari o contrasenya incorrectes');
