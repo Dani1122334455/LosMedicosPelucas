@@ -1,34 +1,28 @@
 @extends('templates.principal')
 
-<!-- Include Date Range Picker -->
-<script type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+@section('contenido')
 
 <script>
-$(document).ready(function () {
-    var date_input = $('input[name="date"]');
-    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-    date_input.datepicker({
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-    })
-});
+    $(document).ready(function () {
+        var date_input = $('input[name="date"]');
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    });
 
-function mostrar() {
-var x = document.getElementById('alerta');
-if (x.style.display === 'block') {
-    x.style.display = 'none';
-} else {
-    x.style.display = 'block';
-    }
-};
+    function mostrar() {
+    var x = document.getElementById('alerta');
+    if (x.style.display === 'block') {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'block';
+        }
+    };
 </script>
-
-@section('contenido')
 
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
@@ -118,15 +112,11 @@ if (x.style.display === 'block') {
                                 <div class="col-md-3 col-sm-6 col-xs-12 mt-4">
                                     <form class="form-horizontal" method="post">
                                         <div class="form-group ">
-                                            <label class="control-label col-sm-2 requiredField" for="date">
+                                            <label class="control-label requiredField" for="date">
                                                 Fecha
                                             </label>
-                                            <div class="col-sm-10">
+                                            <div class="">
                                                 <div class="input-group">
-                                                    <div class="input-group-addon">
-                                                        <i class="fa fa-calendar">
-                                                        </i>
-                                                    </div>
                                                     <input class="form-control" id="date" name="date"
                                                         placeholder="MM/DD/YYYY" type="text" />
                                                 </div>
@@ -143,8 +133,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                 Alertante
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-6">
                                                 <input id="Alertante" name="Alertante" type="text" placeholder=""
                                                     class="form-control">
@@ -156,8 +144,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                 *Telefono
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-6">
                                                 <input id="Telefono" name="Telefono" type="text" placeholder=""
                                                     class="form-control">
@@ -171,7 +157,7 @@ if (x.style.display === 'block') {
                                             Provincia
                                         </label>
                                         <div class="col-6">
-                                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+
                                             <select class="form-select" id="inlineFormSelectPref">
                                               <option selected>Choose...</option>
                                               <option value="1">One</option>
@@ -185,7 +171,7 @@ if (x.style.display === 'block') {
                                             Municipio
                                         </label>
                                         <div class="col-6">
-                                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+
                                             <select class="form-select" id="inlineFormSelectPref">
                                               <option selected>Choose...</option>
                                               <option value="1">One</option>
@@ -202,8 +188,6 @@ if (x.style.display === 'block') {
                                     <label class="control-label col-sm-2 requiredField" for="date">
                                         Direccion
                                     </label>
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i
-                                            class="fa fa-envelope-o bigicon"></i></span>
                                     <div class="col-md-12">
                                         <input id="Direccion" name="Direccion" type="text" placeholder=""
                                             class="form-control">
@@ -214,8 +198,6 @@ if (x.style.display === 'block') {
                                     <label class="control-label col-sm-4 requiredField" for="date">
                                         Complemento Direccion
                                     </label>
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i
-                                            class="fa fa-phone-square bigicon"></i></span>
                                     <div class="col-md-12">
                                         <input id="CDireccion" name="CDireccion" type="text" placeholder="" class="form-control">
                                     </div>
@@ -226,8 +208,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                 Nombre
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-6">
                                                 <input id="Nombre" name="Nombre" type="text" placeholder=""
                                                     class="form-control">
@@ -239,8 +219,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                Apellidos
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-6">
                                                 <input id="Apellidos" name="Apellidos" type="text" placeholder=" "
                                                     class="form-control">
@@ -255,8 +233,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                 Edad
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-6">
                                                 <input id="Edad" name="Edad" type="text" placeholder=""
                                                     class="form-control">
@@ -269,8 +245,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                Documento(DNI,TS/NSS)
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-6">
                                                 <input id="Documento" name="Documento" type="text" placeholder=" "
                                                     class="form-control">
@@ -280,12 +254,10 @@ if (x.style.display === 'block') {
                                 </div>
                                 <div class="col mt-4">
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2 requiredField" for="date">
+                                        <label class="control-label requiredField" for="date">
                                             Sexo
                                         </label>
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                class="fa fa-user bigicon"></i></span>
-                                        <div class="col-md-8">
+                                        <div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                                                 <label class="form-check-label" for="inlineRadio1">Niño</label>
@@ -307,8 +279,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                 Accidente
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="Accidente" name="Accidente" type="text" placeholder=""
                                                     class="form-control">
@@ -317,11 +287,9 @@ if (x.style.display === 'block') {
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-8 requiredField" for="date">
+                                            <label class="control-label col-sm-10 requiredField" for="date">
                                                 Enfermedad sitio publico
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="ESP" name="ESP" type="text" placeholder=" "
                                                     class="form-control">
@@ -330,11 +298,9 @@ if (x.style.display === 'block') {
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-8 requiredField" for="date">
+                                            <label class="control-label col-sm-10 requiredField" for="date">
                                                Enfermedad domicilio
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="ED" name="ED" type="text" placeholder=" "
                                                     class="form-control">
@@ -343,11 +309,9 @@ if (x.style.display === 'block') {
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-8 requiredField" for="date">
+                                            <label class="control-label col-sm-10 requiredField" for="date">
                                                Consulta medica
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="Consulta" name="Consulta" type="text" placeholder=" "
                                                     class="form-control">
@@ -361,8 +325,6 @@ if (x.style.display === 'block') {
                                             <label class="control-label col-sm-2 requiredField" for="date">
                                                 Transporte
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="Transporte" name="Transporte" type="text" placeholder=""
                                                     class="form-control">
@@ -371,11 +333,9 @@ if (x.style.display === 'block') {
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-8 requiredField" for="date">
+                                            <label class="control-label col-sm-10 requiredField" for="date">
                                                 Transporte sanitario
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="TSanitario" name="TSanitario" type="text" placeholder=" "
                                                     class="form-control">
@@ -384,11 +344,9 @@ if (x.style.display === 'block') {
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-8 requiredField" for="date">
+                                            <label class="control-label col-sm-10 requiredField" for="date">
                                                Transporte interno
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigicon"></i></span>
                                             <div class="col-md-10">
                                                 <input id="TInterno" name="TInterno" type="text" placeholder=" "
                                                     class="form-control">
@@ -397,17 +355,19 @@ if (x.style.display === 'block') {
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-8 requiredField" for="date">
+                                            <label class="control-label col-sm-10 requiredField" for="date">
                                               Transporte secundario
                                             </label>
-                                            <span class="col-md-1 col-md-offset-2 text-center"><i
-                                                    class="fa fa-user bigico
-                                                    n"></i></span>
                                             <div class="col-md-10">
                                                 <input id="TSecundario" name="TSecundario" type="text" placeholder=" "
                                                     class="form-control">
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                   <div class="col mt-4 text-center">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
 

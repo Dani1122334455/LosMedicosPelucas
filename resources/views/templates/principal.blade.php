@@ -21,7 +21,14 @@
     <script src="{{ asset('Cosasdelanterior/js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('Cosasdelanterior/FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('Cosasdelanterior/links/bootstrap.min.css') }}">
-     <title>Iniciar Sesion</title>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+
+    <title>Iniciar Sesion</title>
 </head>
 
 <body>
