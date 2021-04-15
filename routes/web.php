@@ -20,8 +20,14 @@ Route::get('/', function () {
 Route::get('/prueba', [UsuariController::class, 'showLogin'])->name('login');
 Route::post('/login', [UsuariController::class, 'login'] );
 Route::get('/logout', [UsuariController::class, 'logout']);
-Route::get('/home', function () {
-    return view('home');
+Route::get('/administrativo', function () {
+    return view('Administrativo.administrativo');
+});
+Route::get('/admin', function () {
+    return view('Admin.admin');
+});
+Route::get('/ambulancia', function () {
+    return view('Ambulancia.ambulancia');
 });
 
 
