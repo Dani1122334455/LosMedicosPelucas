@@ -35,11 +35,14 @@ class UsuariController extends Controller
 
         $user = Usuari::where('username', $username)->first();
 
-        if ($user !=null && Hash::check($contrasenya, $user->contrasenya)) {
+        if ($user != null && Hash::check($contrasenya, $user->contrasenya)) {
             Auth::login($user);
-            $response = redirect('/inicio');
-        }
-        else {
+            if ($user->rols_id == 1) {
+                $response = redirect('/admin');
+            } else if ($user->rols_id == 2) {
+                $response = redirect('/administrativo');
+            }
+        } else {
             $request->session()->flash('error', 'Usuari o contrasenya incorrectes');
             $response = redirect('/')->withInput();
         }

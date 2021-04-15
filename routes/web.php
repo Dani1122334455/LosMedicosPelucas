@@ -20,8 +20,10 @@ Route::get('/', function () {
 Route::get('/prueba', [UsuariController::class, 'showLogin'])->name('login');
 Route::post('/login', [UsuariController::class, 'login'] );
 Route::get('/logout', [UsuariController::class, 'logout']);
-Route::get('/inicio', function () {
+Route::get('/administrativo', function () {
     return view('Administrativo.administrativo');
 });
-
+Route::get('/admin', function () {
+    return view('Admin.admin');
+});
 
