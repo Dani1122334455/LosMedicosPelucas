@@ -48,7 +48,7 @@
     <div class="py-4 px-3 mb-4 bg-light">
         <div class="media d-flex align-items-center"><img src="..." alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
             <div class="media-body">
-                <h4 class="m-0">Romero</h4>
+                <h4 class="m-0">{{ Auth::user()->nom }}</h4>
                 <p class="font-weight-light text-muted mb-0">Administrador</p>
             </div>
         </div>

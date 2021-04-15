@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: broggi
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.17-MariaDB
+-- Server version	5.5.5-10.4.18-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -437,7 +437,7 @@ CREATE TABLE `usuaris` (
   KEY `fk_usuaris_recursos1_idx` (`recursos_id`),
   CONSTRAINT `fk_usuaris_recursos1` FOREIGN KEY (`recursos_id`) REFERENCES `recursos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_usuaris_rols1` FOREIGN KEY (`rols_id`) REFERENCES `rols` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -446,7 +446,7 @@ CREATE TABLE `usuaris` (
 
 LOCK TABLES `usuaris` WRITE;
 /*!40000 ALTER TABLE `usuaris` DISABLE KEYS */;
-INSERT INTO `usuaris` VALUES (4,'pepe123','$2y$10$Zx1C/363XVcvlVBVCBsGG.787iFiqCqfDYfN4jhHOHnOO9Ihelf0q','isartus@isartus.com','Isartus','Romero Poblador',1,1);
+INSERT INTO `usuaris` VALUES (4,'pepe123','$2y$10$Zx1C/363XVcvlVBVCBsGG.787iFiqCqfDYfN4jhHOHnOO9Ihelf0q','isartus@isartus.com','Isartus','Romero Poblador',1,1),(7,'juanito','$2y$10$4h.V9mD3vi3Z05TivtoSOepgxUiS4dlN9Ujz9KrQFe6YWSe02Hv.S','juanito@isartus.com','Juanito','Romero Poblador',2,1),(8,'manolo','$2y$10$Sor9WrrIVlipRanf.YNOK.arqTIjupyBO6aLwBNpBgQngjybI7E2e','manolo@isartus.com','Manolo','Romero Poblador',3,1);
 /*!40000 ALTER TABLE `usuaris` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -459,4 +459,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-15 12:21:35
+-- Dump completed on 2021-04-15 23:22:32
