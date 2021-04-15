@@ -1,0 +1,25 @@
+body {
+    background: #599fd9;
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);
+    overflow-x: hidden;
+  }
+
+.divcard{
+
+    background-image: url(../media/prueba_2x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 700px;
+    height: 500px;
+    margin-left: 30%;
+}
+.logo{
+    background: #599fd9;
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);
+    overflow-x: hidden;
+    border-radius: 100px;
+    margin-top: -50px;
+
+}
