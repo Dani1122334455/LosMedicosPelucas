@@ -16,11 +16,11 @@
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{ url('/prueba') }}"><i class="fa fa-sign-in" aria-hidden="true"></i>
             &nbsp;&nbsp;Login
         </a>
-    </li>
+    </li> --}}
 </div>
 
 @endsection
