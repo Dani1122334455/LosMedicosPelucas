@@ -41,14 +41,18 @@
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                <button onclick="window.location.href='{{ url('/videos') }}'">Videos</button>
+                <button onclick="window.location.href='{{ url('/videos') }}'" style="padding: 0;
+                border: none;
+                background: none;">Videos</button>
             </a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic">
             <form>
             <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                    <input type="button" onclick="mostrar()" class="add-to-cart" value="Formulario" />
+                    <input type="button" onclick="mostrar()" class="add-to-cart" value="Formulario" style="padding: 0;
+                    border: none;
+                    background: none;"/>
                 </form>
             </a>
         </li>
