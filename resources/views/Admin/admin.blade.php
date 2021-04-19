@@ -48,7 +48,9 @@
             <a href="#" class="nav-link text-dark font-italic">
             <form>
             <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                    <input type="button" onclick="mostrar()" class="add-to-cart" value="Formulario Administrativo" />
+                    <input type="button" onclick="mostrar()" class="add-to-cart text-dark font-italic bg-light" value="Formulario Administrativo" style="padding: 0;
+                    border: none;
+                    background: none;" />
                 </form>
             </a>
         </li>

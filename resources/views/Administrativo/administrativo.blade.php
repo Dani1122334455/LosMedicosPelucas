@@ -41,7 +41,7 @@
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                <button onclick="window.location.href='{{ url('/videos') }}'" style="padding: 0;
+                <button onclick="window.location.href='{{ url('/videos') }}'" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
                 background: none;">Videos</button>
             </a>
@@ -50,7 +50,7 @@
             <a href="#" class="nav-link text-dark font-italic">
             <form>
             <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                    <input type="button" onclick="mostrar()" class="add-to-cart" value="Formulario" style="padding: 0;
+                    <input type="button" onclick="mostrar()" class="text-dark font-italic bg-light" value="Formulario" style="padding: 0;
                     border: none;
                     background: none;"/>
                 </form>
@@ -365,7 +365,7 @@
                                 </div>
                                 <div class="row">
                                    <div class="col mt-4 text-center">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
                                     </div>
                                 </div>
 
