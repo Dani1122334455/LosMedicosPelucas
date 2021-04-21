@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Afectats;
 use App\Http\Controllers\Controller;
+use App\Models\Sexes;
 use Illuminate\Http\Request;
 
 class AfectatsController extends Controller
@@ -15,7 +16,12 @@ class AfectatsController extends Controller
      */
     public function index()
     {
-        //
+        // $afectats = Afectats::all();
+        $afectats = Afectats::paginate(5);
+
+        $sexes = Sexes::all();
+
+        return view('afectats.afectats', compact('afectats', 'sexes'));
     }
 
     /**
@@ -25,7 +31,9 @@ class AfectatsController extends Controller
      */
     public function create()
     {
-        //
+        $sexes = Sexes::all();
+
+        return view('afectats.create', compact('sexes'));
     }
 
     /**
@@ -36,7 +44,18 @@ class AfectatsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $afectats = new Afectats();
+
+        $afectats->telefon = $request->input('telefon');
+        $afectats->cip = $request->input('cip');
+        $afectats->nom = $request->input('nom');
+        $afectats->cognoms = $request->input('cognoms');
+        $afectats->edat = $request->input('edat');
+        $afectats->sexes_id = $request->input('sexes_id');
+
+        $afectats->save();
+
+        return redirect()->action([AfectatsController::class,'index']);
     }
 
     /**
@@ -56,9 +75,11 @@ class AfectatsController extends Controller
      * @param  \App\Models\Afectats  $afectats
      * @return \Illuminate\Http\Response
      */
-    public function edit(Afectats $afectats)
+    public function edit(Afectats $afectat)
     {
-        //
+        $sexes = Sexes::all();
+
+        return view('afectats.update', compact('sexes', 'afectat'));
     }
 
     /**
@@ -68,9 +89,18 @@ class AfectatsController extends Controller
      * @param  \App\Models\Afectats  $afectats
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Afectats $afectats)
+    public function update(Request $request, Afectats $afectat)
     {
-        //
+        $afectat->update([
+            'telefon'=> $request->input('telefon'),
+            'cip'=> $request->input('cip'),
+            'nom'=> $request->input('nom'),
+            'cognoms'=> $request->input('cognoms'),
+            'edat'=> $request->input('edat'),
+            'sexes_id'=> $request->input('sexes_id'),
+        ]);
+
+        return redirect()->action([AfectatsController::class,'index']);
     }
 
     /**
@@ -79,8 +109,10 @@ class AfectatsController extends Controller
      * @param  \App\Models\Afectats  $afectats
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Afectats $afectats)
+    public function destroy(Afectats $afectat)
     {
-        //
+        $afectat->delete();
+
+        return redirect()->action([AfectatsController::class, 'index']);
     }
 }
