@@ -17,9 +17,28 @@ class AlertantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $alertants = Alertant::paginate(5);
+        $cicleId = $request->input('inputCicles');
+
+        if($cicleId != 0)
+        {
+
+        $alertants = Alertant::where('municipis_id', '=', $cicleId)
+                                ->orderBy('nom',$direction='asc')
+                                ->paginate(6);
+        }
+        else{
+        $alertants = Alertant::orderBy('nom',$direction='asc')
+                            ->paginate(6);
+        }
+
+        // $alertants = Alertant::orderBy('nom',$direction='asc')
+        //                     ->get();
+
+        $request->session()->flashInput($request->input());
+
+        // $alertants = Alertant::paginate(5);
 
         $municipis = Municipis::all();
 
