@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlertantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariController;
 
@@ -33,3 +34,5 @@ Route::get('/ambulancia', function () {
 Route::get('/videos', function () {
     return view('videos.videos');
 });
+
+Route::resource('alertants', AlertantController::class);
