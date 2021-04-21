@@ -2,24 +2,91 @@
 
 @section('contenido')
 
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center"><img src="{{ asset('logo.png') }}" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+            <div class="media-body">
+                <h4 class="m-0">{{ Auth::user()->nom }}</h4>
+                <p class="font-weight-light text-muted mb-0">Administrador</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Funciones</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic bg-light">
+                Hola
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                Adios
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <button onclick="window.location.href='{{ url('/admin') }}'" class="text-dark font-italic bg-light" style="padding: 0;
+                border: none;
+                background: none;">Atrás</button>
+            </a>
+        </li>
+    </ul>
+
+    <!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Ayudas</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+    </ul> -->
+</div>
+<!-- End vertical navbar -->
+
+<div class="page-content p-6" id="content">
 <div class="container-fluid">
+    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2"><i class="fa fa-plus-circle"
+        aria-hidden="true"></i> Nou alertant</a>
     <div class="card mt-2">
-        <h5 class="col-sm-1 mt-3 ml-1">Buscar</h5>
+        <h5 class="col-sm-2 mt-3 ml-1">Buscar</h5>
         <form action="{{ action([App\Http\Controllers\AlertantController::class, 'index']) }}">
             <div class="card-body">
                 <div class="form-row">
-                    <label for="cicle" class="col-sm-1 col-form-label">Municipi</label>
+                    <label for="cicle" class="col-sm-0 col-form-label">Municipi</label>
                     <div class="col-sm-10">
                         <select id="inputCicles" class="form-control" name="inputCicles">
                             <option selected value="0">Selecciona un municipi</option>
                             @foreach ($municipis as $municipi)
                                 <option value={{ $municipi->id }}>{{ $municipi->nom }}</option>
                             @endforeach
-
                           </select>
                     </div>
                     <div class="col-sm-1" style="float: right">
-                        <div class="col-sm-1">
+                        <div class="col-sm-0">
                             <button type="submit" class="btn btn-secondary"><i class="fas fa-search"> Buscar</i></button>
                         </div>
                     </div>
@@ -63,8 +130,10 @@
                   @endforeach
                 </tbody>
               </table>
-
-              {{ $alertants->links() }}
+            
+                <div class="d-flex justify-content-center">
+                    {{ $alertants->links() }}
+                </div>
 
             @else
                 <div class="alert alert-light mt-2" role="alert">No hi ha cap curs per la cerca realitzada</div>
@@ -72,9 +141,6 @@
 
         </div>
     </div>
-
-    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2"  style="float: right"><i class="fa fa-plus-circle"
-        aria-hidden="true"></i> Nou alertant</a>
 
     {{-- Modal del borrar --}}
 
@@ -102,5 +168,5 @@
         </div>
     </div>
 </div>
-
+</div>
 @endsection
