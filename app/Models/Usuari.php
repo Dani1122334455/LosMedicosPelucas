@@ -28,4 +28,14 @@ class Usuari extends Authenticatable
         return $this->belongsTo(Rol::class, 'rols_id');
     }
 
+    /**
+     * Get all of the comments for the Usuari
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function incidencies()
+    {
+        return $this->hasMany(Incidencies::class, 'foreign_key', 'local_key');
+    }
+
 }

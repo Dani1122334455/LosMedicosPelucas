@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariController;
+use App\Http\Controllers\AfectatsController;
+use App\Http\Controllers\AlertantController;
+use App\Http\Controllers\IncidenciesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +36,7 @@ Route::get('/ambulancia', function () {
 Route::get('/videos', function () {
     return view('videos.videos');
 });
+
+Route::resource('alertants', AlertantController::class);
+Route::resource('afectats', AfectatsController::class);
+Route::resource('incidencies', IncidenciesController::class);
