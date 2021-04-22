@@ -4,11 +4,14 @@ use App\Http\Controllers\AlertantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\AfectatsController;
 use App\Http\Controllers\AlertantController;
 use App\Http\Controllers\IncidenciesController;
 =======
 >>>>>>> parent of fd1a344c (pargueno)
+=======
+>>>>>>> parent of fd1a344 (pargueno)
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +46,10 @@ Route::get('/videos', function () {
 
 Route::resource('alertants', AlertantController::class);
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::resource('afectats', AfectatsController::class);
 Route::resource('incidencies', IncidenciesController::class);
 =======
 >>>>>>> parent of fd1a344c (pargueno)
+=======
+>>>>>>> parent of fd1a344 (pargueno)
