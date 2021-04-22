@@ -9,7 +9,10 @@ class Incidencies extends Model
 {
     use HasFactory;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
     protected $table = 'incidencies';
     // protected $primaryKey = 'id';
@@ -57,5 +60,8 @@ class Incidencies extends Model
     {
         return $this->belongsTo(Usuari::class, 'usuaris_id');
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

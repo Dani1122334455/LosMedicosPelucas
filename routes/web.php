@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariController;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 use App\Http\Controllers\AfectatsController;
 use App\Http\Controllers\AlertantController;
@@ -17,6 +18,11 @@ use App\Http\Controllers\IncidenciesController;
 =======
 >>>>>>> parent of fd1a344 (pargueno)
 >>>>>>> parent of b221eb5 (wddqd)
+=======
+use App\Http\Controllers\AfectatsController;
+use App\Http\Controllers\AlertantController;
+use App\Http\Controllers\IncidenciesController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +56,7 @@ Route::get('/videos', function () {
 });
 
 Route::resource('alertants', AlertantController::class);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 Route::resource('afectats', AfectatsController::class);
 Route::resource('incidencies', IncidenciesController::class);
@@ -63,3 +70,7 @@ Route::resource('incidencies', IncidenciesController::class);
 =======
 >>>>>>> parent of fd1a344 (pargueno)
 >>>>>>> parent of b221eb5 (wddqd)
+=======
+Route::resource('afectats', AfectatsController::class);
+Route::resource('incidencies', IncidenciesController::class);
+>>>>>>> Stashed changes

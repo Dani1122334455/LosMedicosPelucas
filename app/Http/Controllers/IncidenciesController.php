@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 use App\Models\Incidencies;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 =======
+=======
+>>>>>>> Stashed changes
 use App\Models\Alertant;
 use App\Models\Municipis;
 use App\Models\Incidencies;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Usuari;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 class IncidenciesController extends Controller
@@ -25,14 +31,20 @@ class IncidenciesController extends Controller
     public function index()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         //
 =======
+=======
+>>>>>>> Stashed changes
         $incidencies = Incidencies::all();
         $alertants = Alertant::all();
         $municipis = Municipis::all();
         $usuaris = Usuari::all();
 
         return view('incidencies.incidencies', compact('incidencies','alertants','municipis','usuaris'));
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 

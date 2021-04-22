@@ -26,7 +26,10 @@ class Municipis extends Model
         return $this->hasMany(Alertant::class, 'municipis_id');
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
     /**
      * Get all of the comments for the Municipis
@@ -37,5 +40,8 @@ class Municipis extends Model
     {
         return $this->hasMany(Incidencies::class, 'municipis_id');
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

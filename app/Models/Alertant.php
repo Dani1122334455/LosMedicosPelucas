@@ -37,7 +37,10 @@ class Alertant extends Model
         return $this->belongsTo(TipusAlertant::class, 'tipus_alertants_id');
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     /**
      * Get the user associated with the Alertant
      *
@@ -47,5 +50,8 @@ class Alertant extends Model
     {
         return $this->hasOne(Incidencies::class, 'alertants_id');
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }

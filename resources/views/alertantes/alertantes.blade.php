@@ -2,6 +2,7 @@
 
 @section('contenido')
 
+<<<<<<< Updated upstream
 
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
@@ -78,6 +79,8 @@
                 <div class="form-row">
                     <label for="cicle" class="col-sm-0 col-form-label">Municipi</label>
 
+=======
+>>>>>>> Stashed changes
 @include('partials.mensajes')
 
 <div class="container-fluid">
@@ -87,7 +90,10 @@
             <div class="card-body">
                 <div class="form-row">
                     <label for="cicle" class="col-sm-1 col-form-label">Municipi</label>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                     <div class="col-sm-10">
                         <select id="inputCicles" class="form-control" name="inputCicles">
                             <option selected value="0">Selecciona un municipi</option>
@@ -98,6 +104,7 @@
                           </select>
                     </div>
                     <div class="col-sm-1" style="float: right">
+<<<<<<< Updated upstream
                         <div class="col-sm-0">
 
 
@@ -106,6 +113,9 @@
                     <div class="col-sm-1" style="float: right">
                         <div class="col-sm-1">
 
+=======
+                        <div class="col-sm-1">
+>>>>>>> Stashed changes
                             <button type="submit" class="btn btn-secondary"><i class="fas fa-search"> Buscar</i></button>
                         </div>
                     </div>
@@ -150,6 +160,7 @@
                 </tbody>
               </table>
 
+<<<<<<< Updated upstream
                 <div class="d-flex justify-content-center">
                     {{ $alertants->links() }}
                 </div>
@@ -158,16 +169,22 @@
                 <div class="alert alert-light mt-2" role="alert">No hi ha cap curs per la cerca realitzada</div>
 
 
+=======
+>>>>>>> Stashed changes
               {{ $alertants->links() }}
 
             @else
                 <div class="alert alert-light mt-2" role="alert">No hi ha cap alertant per la cerca realitzada</div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             @endif
 
         </div>
     </div>
 
+<<<<<<< Updated upstream
     <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2" style="float: right"><i class="fa fa-plus-circle"
         aria-hidden="true"></i> Nou alertant</a>
 
@@ -175,6 +192,11 @@
         aria-hidden="true"></i> Nou alertant</a>
 
 
+=======
+    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2"  style="float: right"><i class="fa fa-plus-circle"
+        aria-hidden="true"></i> Nou alertant</a>
+
+>>>>>>> Stashed changes
     {{-- Modal del borrar --}}
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
@@ -202,8 +224,11 @@
     </div>
 </div>
 
+<<<<<<< Updated upstream
 </div>
 
 
 
+=======
+>>>>>>> Stashed changes
 @endsection
