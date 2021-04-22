@@ -69,8 +69,7 @@
 
 <div class="page-content p-6" id="content">
 <div class="container-fluid">
-    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2"><i class="fa fa-plus-circle"
-        aria-hidden="true"></i> Nou alertant</a>
+
     <div class="card mt-2">
         <h5 class="col-sm-2 mt-3 ml-1">Buscar</h5>
         <form action="{{ action([App\Http\Controllers\AlertantController::class, 'index']) }}">
@@ -130,7 +129,7 @@
                   @endforeach
                 </tbody>
               </table>
-            
+
                 <div class="d-flex justify-content-center">
                     {{ $alertants->links() }}
                 </div>
@@ -141,7 +140,8 @@
 
         </div>
     </div>
-
+    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2" style="float: right"><i class="fa fa-plus-circle"
+        aria-hidden="true"></i> Nou alertant</a>
     {{-- Modal del borrar --}}
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
