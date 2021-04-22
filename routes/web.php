@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariController;
 use App\Http\Controllers\AfectatsController;
 use App\Http\Controllers\AlertantController;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\IncidenciesController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +42,7 @@ Route::get('/videos', function () {
 
 Route::resource('alertants', AlertantController::class);
 Route::resource('afectats', AfectatsController::class);
+<<<<<<< Updated upstream
+=======
+Route::resource('incidencies', IncidenciesController::class);
+>>>>>>> Stashed changes

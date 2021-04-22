@@ -25,4 +25,17 @@ class Municipis extends Model
     {
         return $this->hasMany(Alertant::class, 'municipis_id');
     }
+<<<<<<< Updated upstream
+=======
+
+    /**
+     * Get all of the comments for the Municipis
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function incidencies()
+    {
+        return $this->hasMany(Incidencies::class, 'municipis_id');
+    }
+>>>>>>> Stashed changes
 }
