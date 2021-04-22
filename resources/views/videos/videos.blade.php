@@ -63,7 +63,7 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="mostrar()" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
-                background: none;">Video 1</button>
+                background: none;">Reanimació Cardiopulmonar</button>
             </a>
         </li>
         <li class="nav-item">
@@ -71,7 +71,7 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="mostrar2()" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
-                background: none;">Video 2</button>
+                background: none;">Desfibril·lador extern</button>
             </a>
         </li>
         <li class="nav-item">
@@ -79,7 +79,7 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="mostrar3()" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
-                background: none;">Video 3</button>
+                background: none;">Compressions i ventilacions</button>
             </a>
         </li>
         <li class="nav-item">
