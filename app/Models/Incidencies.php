@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Incidencies extends Model
 {
     use HasFactory;
-<<<<<<< Updated upstream
-=======
+
 
     protected $table = 'incidencies';
     // protected $primaryKey = 'id';
@@ -57,5 +56,5 @@ class Incidencies extends Model
     {
         return $this->belongsTo(Usuari::class, 'usuaris_id');
     }
->>>>>>> Stashed changes
+
 }

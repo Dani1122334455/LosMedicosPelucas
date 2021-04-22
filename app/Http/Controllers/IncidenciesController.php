@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Incidencies;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\Alertant;
 use App\Models\Municipis;
 use App\Models\Incidencies;
