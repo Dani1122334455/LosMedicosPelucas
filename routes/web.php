@@ -2,9 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariController;
+<<<<<<< HEAD
 use App\Http\Controllers\AfectatsController;
 use App\Http\Controllers\AlertantController;
 use App\Http\Controllers\IncidenciesController;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+use App\Http\Controllers\AfectatsController;
+use App\Http\Controllers\AlertantController;
+use App\Http\Controllers\IncidenciesController;
+=======
+>>>>>>> parent of fd1a344c (pargueno)
+=======
+>>>>>>> parent of fd1a344 (pargueno)
+>>>>>>> parent of b221eb5 (wddqd)
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +50,16 @@ Route::get('/videos', function () {
 });
 
 Route::resource('alertants', AlertantController::class);
+<<<<<<< HEAD
 Route::resource('afectats', AfectatsController::class);
 Route::resource('incidencies', IncidenciesController::class);
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Route::resource('afectats', AfectatsController::class);
+Route::resource('incidencies', IncidenciesController::class);
+=======
+>>>>>>> parent of fd1a344c (pargueno)
+=======
+>>>>>>> parent of fd1a344 (pargueno)
+>>>>>>> parent of b221eb5 (wddqd)
