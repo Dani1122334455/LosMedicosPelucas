@@ -2,6 +2,7 @@
 
 @section('contenido')
 
+
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
     <div class="py-4 px-3 mb-4 bg-light">
@@ -76,16 +77,35 @@
             <div class="card-body">
                 <div class="form-row">
                     <label for="cicle" class="col-sm-0 col-form-label">Municipi</label>
+
+@include('partials.mensajes')
+
+<div class="container-fluid">
+    <div class="card mt-2">
+        <h5 class="col-sm-1 mt-3 ml-1">Buscar</h5>
+        <form action="{{ action([App\Http\Controllers\AlertantController::class, 'index']) }}">
+            <div class="card-body">
+                <div class="form-row">
+                    <label for="cicle" class="col-sm-1 col-form-label">Municipi</label>
+
                     <div class="col-sm-10">
                         <select id="inputCicles" class="form-control" name="inputCicles">
                             <option selected value="0">Selecciona un municipi</option>
                             @foreach ($municipis as $municipi)
                                 <option value={{ $municipi->id }}>{{ $municipi->nom }}</option>
                             @endforeach
+
                           </select>
                     </div>
                     <div class="col-sm-1" style="float: right">
                         <div class="col-sm-0">
+
+
+                          </select>
+                    </div>
+                    <div class="col-sm-1" style="float: right">
+                        <div class="col-sm-1">
+
                             <button type="submit" class="btn btn-secondary"><i class="fas fa-search"> Buscar</i></button>
                         </div>
                     </div>
@@ -136,12 +156,25 @@
 
             @else
                 <div class="alert alert-light mt-2" role="alert">No hi ha cap curs per la cerca realitzada</div>
+
+
+              {{ $alertants->links() }}
+
+            @else
+                <div class="alert alert-light mt-2" role="alert">No hi ha cap alertant per la cerca realitzada</div>
+
             @endif
 
         </div>
     </div>
+
     <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2" style="float: right"><i class="fa fa-plus-circle"
         aria-hidden="true"></i> Nou alertant</a>
+
+    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2"  style="float: right"><i class="fa fa-plus-circle"
+        aria-hidden="true"></i> Nou alertant</a>
+
+
     {{-- Modal del borrar --}}
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
@@ -168,5 +201,9 @@
         </div>
     </div>
 </div>
+
 </div>
+
+
+
 @endsection

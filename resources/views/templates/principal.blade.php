@@ -28,7 +28,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
 
-    <title>Iniciar Sesion</title>
+    <title>@yield('titulo')</title>
 </head>
 
 <body>
