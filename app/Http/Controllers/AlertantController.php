@@ -26,19 +26,19 @@ class AlertantController extends Controller
 
         $alertants = Alertant::where('municipis_id', '=', $cicleId)
                                 ->orderBy('nom',$direction='asc')
-<<<<<<< Updated upstream
+
                                 ->paginate(6);
         }
         else{
         $alertants = Alertant::orderBy('nom',$direction='asc')
                             ->paginate(6);
-=======
+
                                 ->paginate(4);
         }
         else{
         $alertants = Alertant::orderBy('nom',$direction='asc')
                             ->paginate(4);
->>>>>>> Stashed changes
+
         }
 
         // $alertants = Alertant::orderBy('nom',$direction='asc')

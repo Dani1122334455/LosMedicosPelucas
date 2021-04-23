@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comarques;
 use App\Http\Controllers\Controller;
-<<<<<<< Updated upstream
-=======
 use App\Models\Provincies;
->>>>>>> Stashed changes
 use Illuminate\Http\Request;
 
 class ComarquesController extends Controller
@@ -17,11 +14,11 @@ class ComarquesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< Updated upstream
+
     public function index()
     {
         //
-=======
+
     public function index(Request $request)
     {
 
@@ -31,7 +28,7 @@ class ComarquesController extends Controller
          $provincies = Provincies::all();
 
          return view('comarques.comarques', compact('comarques', 'provincies'));
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -41,15 +38,13 @@ class ComarquesController extends Controller
      */
     public function create()
     {
-<<<<<<< Updated upstream
-        //
-=======
+
         $comarques = Comarques::all();
 
         $provincies = Provincies::all();
 
         return view('comarques.create', compact('comarques','provincies'));
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -60,9 +55,9 @@ class ComarquesController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< Updated upstream
+
         //
-=======
+
         $comarque = new Comarques();
 
         $comarque->id = 79;
@@ -72,7 +67,7 @@ class ComarquesController extends Controller
         $comarque->save();
 
         return redirect()->action([ComarquesController::class,'index']);
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -81,11 +76,11 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-<<<<<<< Updated upstream
+
     public function show(Comarques $comarques)
-=======
+
     public function show(Comarques $comarque)
->>>>>>> Stashed changes
+
     {
         //
     }
@@ -96,11 +91,11 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-<<<<<<< Updated upstream
+
     public function edit(Comarques $comarques)
     {
         //
-=======
+
     public function edit(Comarques $comarque)
     {
         //
@@ -110,7 +105,7 @@ class ComarquesController extends Controller
         $provincies = Provincies::all();
 
         return view('comarques.update', compact('comarques','provincies', 'comarque'));
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -120,11 +115,11 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-<<<<<<< Updated upstream
+
     public function update(Request $request, Comarques $comarques)
     {
         //
-=======
+
     public function update(Request $request, Comarques $comarque)
     {
         $comarque->update([
@@ -135,7 +130,7 @@ class ComarquesController extends Controller
         ]);
 
         return redirect()->action([ComarquesController::class,'index']);
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -144,17 +139,16 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-<<<<<<< Updated upstream
+
     public function destroy(Comarques $comarques)
     {
-        //
-=======
+
     public function destroy(Comarques $comarque)
     {
         //
         $comarque->delete();
 
         return redirect()->action([ComarquesController::class, 'index']);
->>>>>>> Stashed changes
+
     }
 }
