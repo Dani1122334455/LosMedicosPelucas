@@ -17,11 +17,21 @@ class AfectatsController extends Controller
     public function index()
     {
         // $afectats = Afectats::all();
+<<<<<<< Updated upstream
         $afectats = Afectats::paginate(5);
 
         $sexes = Sexes::all();
 
         return view('afectats.afectats', compact('afectats', 'sexes'));
+=======
+        // $afectats = Afectats::paginate(5);
+
+        // $sexes = Sexes::all();
+
+        // return view('afectats.afectats', compact('afectats', 'sexes'));
+
+        return view('afectats.afectats_vue');
+>>>>>>> Stashed changes
     }
 
     /**

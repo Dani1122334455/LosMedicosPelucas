@@ -35,4 +35,17 @@ class Municipis extends Model
     {
         return $this->hasMany(Incidencies::class, 'municipis_id');
     }
+<<<<<<< Updated upstream
+=======
+
+    /**
+     * Get the user that owns the Municipis
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function comarques()
+    {
+        return $this->belongsTo(Comarques::class, 'comarques_id');
+    }
+>>>>>>> Stashed changes
 }

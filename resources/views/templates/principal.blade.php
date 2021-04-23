@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="{{ asset('Cosasdelanterior/js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('Cosasdelanterior/FONTAWESOME/fontawesome-free-5.15.1-web/css/all.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('Cosasdelanterior/links/bootstrap.min.css') }}">
     <!-- Include Date Range Picker -->
     <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
@@ -31,12 +30,17 @@
     <title>@yield('titulo')</title>
 </head>
 
+{{-- <body style="overflow: hidden"> --}}
 <body>
-    <div>
+    <div id="app">
         @yield('contenido')
     </div>
 </body>
 
 <script src="{{ asset('app.js') }}"></script>
+<<<<<<< Updated upstream
+=======
+{{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+>>>>>>> Stashed changes
 
 </html>

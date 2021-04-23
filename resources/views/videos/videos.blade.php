@@ -1,5 +1,7 @@
 @extends('templates.principal')
 
+@section('titulo', 'Panel de videos')
+
 @section('contenido')
 
 <script>
@@ -63,7 +65,11 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="mostrar()" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
+<<<<<<< Updated upstream
                 background: none;">Reanimació Cardiopulmonar</button>
+=======
+                background: none;">Procediment RCP complet</button>
+>>>>>>> Stashed changes
             </a>
         </li>
         <li class="nav-item">
@@ -71,7 +77,11 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="mostrar2()" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
+<<<<<<< Updated upstream
                 background: none;">Desfibril·lador extern</button>
+=======
+                background: none;">Procediment DESA</button>
+>>>>>>> Stashed changes
             </a>
         </li>
         <li class="nav-item">
@@ -79,7 +89,11 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="mostrar3()" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
+<<<<<<< Updated upstream
                 background: none;">Compressions i ventilacions</button>
+=======
+                background: none;">Seqüència RCP</button>
+>>>>>>> Stashed changes
             </a>
         </li>
         <li class="nav-item">
@@ -87,7 +101,7 @@
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 <button onclick="window.location.href='{{ url('/administrativo') }}'" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
-                background: none;">Atrás</button>
+                background: none;">Volver Atrás</button>
             </a>
         </li>
         <li class="nav-item">
