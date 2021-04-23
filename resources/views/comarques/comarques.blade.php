@@ -65,7 +65,9 @@
                 </tbody>
               </table>
 
-              {{-- {{ $afectats->links() }} --}}
+              <div class="d-flex justify-content-center">
+                {{ $comarques->links() }}
+            </div>
 
             @else
                 <div class="alert alert-light mt-2" role="alert">No hi ha cap afectat per la cerca realitzada</div>

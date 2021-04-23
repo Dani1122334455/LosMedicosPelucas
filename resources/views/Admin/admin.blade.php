@@ -87,6 +87,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="{{ url('/comarques') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Comarques
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ url('/logout') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
                Cerrar Sesion

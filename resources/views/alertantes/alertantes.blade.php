@@ -25,15 +25,27 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/afectats') }}" class="nav-link text-dark font-italic">
+            <a href="{{ url('/alertants') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Alertants
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/afectats') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Afectats
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/municipis') }}" class="nav-link text-dark font-italic">
+            <a href="{{ url('/municipis') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Municipis
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/comarques') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Comarques
             </a>
         </li>
         <li class="nav-item">

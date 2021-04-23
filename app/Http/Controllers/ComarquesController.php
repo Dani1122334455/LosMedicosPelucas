@@ -16,8 +16,26 @@ class ComarquesController extends Controller
      */
     public function index(Request $request)
     {
+        $cicleId = $request->input('inputCicles');
 
-         $comarques = Comarques::all();
+        if($cicleId != 0)
+        {
+
+        $comarques = Comarques::where('provincies_id', '=', $cicleId)
+                                ->orderBy('id',$direction='asc')
+                                ->paginate(5);
+        }
+        else{
+        $comarques = Comarques::orderBy('id',$direction='asc')
+                            ->paginate(5);
+        }
+
+        // $alertants = Alertant::orderBy('nom',$direction='asc')
+        //                     ->get();
+
+        $request->session()->flashInput($request->input());
+
+         $comarques = Comarques::paginate(5);
 
 
          $provincies = Provincies::all();
