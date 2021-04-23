@@ -1,5 +1,7 @@
 @extends('templates.principal')
 
+@section('titulo', 'Principal Ambulancia')
+
 @section('contenido')
 
 <script>
@@ -385,7 +387,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">HelpBox</h5>
@@ -394,15 +396,35 @@
             </button>
         </div>
         <div class="modal-body">
+
+            <i style="#BFBFBF">(¿Cómo te llamas?)</i>
             <p>What is your name?</p>
+
+            <i style="#BFBFBF">(¿Cuántos años tienes?)</i>
             <p>How old are you?</p>
+
+            <i style="#BFBFBF">(¿Eres un hombre una mujer o un niño?)</i>
             <p>Are you a man, woman or child?</p>
-            <p>Tell me your identity card</p>
+
+            <i style="#BFBFBF">(Dime tu documento de identidad, por favor)</i>
+            <p>Tell me your identity card, please</p>
+
+            <i style="#BFBFBF">(¿Me podrías decir un numero de teléfono?)</i>
             <p>Could your give me a phone number?</p>
+
+            <i style="#BFBFBF">(¿En que municipio te encuentras?)</i>
             <p>In what municipality are you located?</p>
+
+            <i style="#BFBFBF">(¿Cuál es la dirección?)</i>
             <p>What is the address?</p>
+
+            <i style="#BFBFBF">(¿Qué ha pasado?)</i>
             <p>What happened?</p>
+
+            <i style="#BFBFBF">(¿Cómo están las personas afectadas?)</i>
             <p>How are the affected people?</p>
+
+            <i style="#BFBFBF">(¿Cuántos heridos hay?)</i>
             <p>How many injured are there?</p>
         </div>
         <div class="modal-footer">
