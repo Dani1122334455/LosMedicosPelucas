@@ -25,15 +25,27 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/afectats') }}" class="nav-link text-dark font-italic">
+            <a href="{{ url('/alertants') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Alertants
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/afectats') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Afectats
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('/alertants') }}" class="nav-link text-dark font-italic">
+            <a href="{{ url('/municipis') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                Alertants
+                Municipis
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/comarques') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Comarques
             </a>
         </li>
         <li class="nav-item">
@@ -42,6 +54,12 @@
                 <button onclick="window.location.href='{{ url('/admin') }}'" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
                 background: none;">Atrás</button>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/logout') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+               Cerrar Sesion
             </a>
         </li>
     </ul>
