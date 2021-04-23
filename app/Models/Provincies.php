@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Provincies extends Model
 {
     use HasFactory;
+<<<<<<< Updated upstream
+=======
 
     protected $table = 'provincies';
     // protected $primaryKey = 'id';
@@ -24,4 +26,5 @@ class Provincies extends Model
     {
         return $this->hasMany(Comarques::class, 'provincies_id');
     }
+>>>>>>> Stashed changes
 }

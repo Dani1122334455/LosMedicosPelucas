@@ -1,8 +1,14 @@
 @extends('templates.principal')
 
+<<<<<<< Updated upstream
+@section('contenido')
+
+@include('partials.mensajes')
+=======
 @section('titulo', 'Alertants')
 
 @section('contenido')
+>>>>>>> Stashed changes
 
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
@@ -19,6 +25,15 @@
 
     <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
+<<<<<<< Updated upstream
+            <a href="#" class="nav-link text-dark font-italic bg-light">
+                Hola
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                Adios
+=======
             <a href="{{ url('/incidencies') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Incidencies
@@ -34,6 +49,7 @@
             <a href="{{ url('/municipis') }}" class="nav-link text-dark font-italic">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Municipis
+>>>>>>> Stashed changes
             </a>
         </li>
         <li class="nav-item">
@@ -45,6 +61,38 @@
             </a>
         </li>
     </ul>
+<<<<<<< Updated upstream
+
+    <!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Ayudas</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+                ...
+            </a>
+        </li>
+    </ul> -->
+=======
+>>>>>>> Stashed changes
 </div>
 <!-- End vertical navbar -->
 
@@ -63,6 +111,10 @@
                             @foreach ($municipis as $municipi)
                                 <option value={{ $municipi->id }}>{{ $municipi->nom }}</option>
                             @endforeach
+<<<<<<< Updated upstream
+                          </select>
+                    </div>
+=======
                         </select>
                     </div>
 
@@ -76,6 +128,7 @@
                         </select>
                     </div> --}}
 
+>>>>>>> Stashed changes
                     <div class="col-sm-1" style="float: right">
                         <div class="col-sm-0">
                             <button type="submit" class="btn btn-secondary"><i class="fas fa-search"> Buscar</i></button>
@@ -105,7 +158,11 @@
                     <tr>
                         <td>{{ $alertant->id }}</td>
                         <td>{{ $alertant->telefon }}</td>
+<<<<<<< Updated upstream
+                        <td>{{ $alertant->nom }}</td>
+=======
                         <td>{{ $alertant->nom }} </td>
+>>>>>>> Stashed changes
                         <td>{{ $alertant->adreca }}</td>
                         <td>{{ $alertant->municipis->nom }}</td>
                         <td>{{ $alertant->tipusAlertant->tipus }}</td>
@@ -127,16 +184,24 @@
                 </div>
 
             @else
+<<<<<<< Updated upstream
+                <div class="alert alert-light mt-2" role="alert">No hi ha cap curs per la cerca realitzada</div>
+=======
                 <div class="alert alert-light mt-2" role="alert">No hi ha cap municipi per la cerca realitzada</div>
+>>>>>>> Stashed changes
             @endif
 
         </div>
 
     </div>
 
+<<<<<<< Updated upstream
+    <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2" style="float: right"><i class="fa fa-plus-circle"
+=======
     <a href="{{ url('alertants/create') }}" class="btn btn-primary mt-2 mb-2" style="float: right; position: fixed;
     right: 20px;
     bottom: 20px;"><i class="fa fa-plus-circle"
+>>>>>>> Stashed changes
         aria-hidden="true"></i> Nou alertant</a>
 
     {{-- Modal del borrar --}}
@@ -166,5 +231,8 @@
     </div>
 </div>
 </div>
+<<<<<<< Updated upstream
+=======
 
+>>>>>>> Stashed changes
 @endsection

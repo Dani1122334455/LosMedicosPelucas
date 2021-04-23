@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Municipis;
 use App\Http\Controllers\Controller;
+<<<<<<< Updated upstream
+=======
 use App\Models\Comarques;
+>>>>>>> Stashed changes
 use Illuminate\Http\Request;
 
 class MunicipisController extends Controller
@@ -14,6 +17,13 @@ class MunicipisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function index()
+    {
+        $municipis = Municipis::paginate(5);
+
+        return view('municipis.municipis', compact('municipis'));
+=======
     public function index(Request $request)
     {
         $cicleId = $request->input('inputCicles');
@@ -40,6 +50,7 @@ class MunicipisController extends Controller
         $comarques = Comarques::all();
 
         return view('municipis.municipis', compact('municipis','comarques'));
+>>>>>>> Stashed changes
     }
 
     /**
@@ -49,11 +60,15 @@ class MunicipisController extends Controller
      */
     public function create()
     {
+<<<<<<< Updated upstream
+        //
+=======
         $municipis = Municipis::all();
 
         $comarques = Comarques::all();
 
         return view('municipis.create', compact('comarques','municipis'));
+>>>>>>> Stashed changes
     }
 
     /**
@@ -64,6 +79,9 @@ class MunicipisController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< Updated upstream
+        //
+=======
         $municipi = new Municipis();
 
         $municipi->id = $request->input('id');
@@ -73,6 +91,7 @@ class MunicipisController extends Controller
         $municipi->save();
 
         return redirect()->action([MunicipisController::class,'index']);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -92,11 +111,17 @@ class MunicipisController extends Controller
      * @param  \App\Models\Municipis  $municipis
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function edit(Municipis $municipis)
+    {
+        //
+=======
     public function edit(Municipis $municipi)
     {
         $comarques = Comarques::all();
 
         return view('municipis.update', compact('municipi','comarques'));
+>>>>>>> Stashed changes
     }
 
     /**
@@ -106,6 +131,11 @@ class MunicipisController extends Controller
      * @param  \App\Models\Municipis  $municipis
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function update(Request $request, Municipis $municipis)
+    {
+        //
+=======
     public function update(Request $request, Municipis $municipi)
     {
         $municipi->update([
@@ -115,6 +145,7 @@ class MunicipisController extends Controller
         ]);
 
         return redirect()->action([MunicipisController::class,'index']);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -123,10 +154,16 @@ class MunicipisController extends Controller
      * @param  \App\Models\Municipis  $municipis
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function destroy(Municipis $municipis)
+    {
+        //
+=======
     public function destroy(Municipis $municipi)
     {
         $municipi->delete();
 
         return redirect()->action([MunicipisController::class, 'index']);
+>>>>>>> Stashed changes
     }
 }

@@ -7,7 +7,10 @@ use App\Models\Municipis;
 use App\Models\Incidencies;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+<<<<<<< Updated upstream
+=======
 use App\Models\TipusIncidencia;
+>>>>>>> Stashed changes
 use App\Models\Usuari;
 
 class IncidenciesController extends Controller
@@ -17,6 +20,11 @@ class IncidenciesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function index()
+    {
+        $incidencies = Incidencies::all();
+=======
     public function index(Request $request)
     {
         $cicleId = $request->input('inputCicles');
@@ -39,6 +47,7 @@ class IncidenciesController extends Controller
         $request->session()->flashInput($request->input());
 
         // $incidencies = Incidencies::all();
+>>>>>>> Stashed changes
         $alertants = Alertant::all();
         $municipis = Municipis::all();
         $usuaris = Usuari::all();
@@ -53,6 +62,9 @@ class IncidenciesController extends Controller
      */
     public function create()
     {
+<<<<<<< Updated upstream
+        //
+=======
         // $sexes = Sexes::all();
         $municipis = Municipis::all();
         $tipusIncidencia = TipusIncidencia::all();
@@ -60,6 +72,7 @@ class IncidenciesController extends Controller
         $alertants = Alertant::all();
 
         return view('incidencies.create', compact('municipis', 'tipusIncidencia','usuaris','alertants'));
+>>>>>>> Stashed changes
     }
 
     /**
@@ -70,6 +83,9 @@ class IncidenciesController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< Updated upstream
+        //
+=======
         $incidencies = new Incidencies();
 
         $incidencies->num_incident = $request->input('num_incident');
@@ -88,6 +104,7 @@ class IncidenciesController extends Controller
         $incidencies->save();
 
         return redirect()->action([IncidenciesController::class,'index']);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -107,6 +124,11 @@ class IncidenciesController extends Controller
      * @param  \App\Models\Incidencies  $incidencies
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function edit(Incidencies $incidencies)
+    {
+        //
+=======
     public function edit(Incidencies $incidency)
     {
         // $municipis = Municipis::all();
@@ -119,6 +141,7 @@ class IncidenciesController extends Controller
         $alertants = Alertant::all();
 
         return view('incidencies.update', compact('municipis', 'tipusIncidencia','usuaris','alertants','incidency'));
+>>>>>>> Stashed changes
     }
 
     /**
@@ -128,6 +151,11 @@ class IncidenciesController extends Controller
      * @param  \App\Models\Incidencies  $incidencies
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function update(Request $request, Incidencies $incidencies)
+    {
+        //
+=======
     public function update(Request $request, Incidencies $incidency)
     {
         $incidency->update([
@@ -146,6 +174,7 @@ class IncidenciesController extends Controller
         ]);
 
         return redirect()->action([IncidenciesController::class,'index']);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -154,10 +183,16 @@ class IncidenciesController extends Controller
      * @param  \App\Models\Incidencies  $incidencies
      * @return \Illuminate\Http\Response
      */
+<<<<<<< Updated upstream
+    public function destroy(Incidencies $incidencies)
+    {
+        //
+=======
     public function destroy(Incidencies $incidency)
     {
         $incidency->delete();
 
         return redirect()->action([IncidenciesController::class, 'index']);
+>>>>>>> Stashed changes
     }
 }

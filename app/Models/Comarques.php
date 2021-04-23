@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Comarques extends Model
 {
     use HasFactory;
+<<<<<<< Updated upstream
+=======
 
     protected $table = 'comarques';
     // protected $primaryKey = 'id';
@@ -26,4 +28,5 @@ class Comarques extends Model
     }
 
 
+>>>>>>> Stashed changes
 }

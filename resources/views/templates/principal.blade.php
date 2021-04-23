@@ -38,6 +38,9 @@
 </body>
 
 <script src="{{ asset('app.js') }}"></script>
+<<<<<<< Updated upstream
+=======
 {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+>>>>>>> Stashed changes
 
 </html>

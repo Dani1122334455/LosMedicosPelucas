@@ -5,7 +5,10 @@ use App\Http\Controllers\UsuariController;
 use App\Http\Controllers\AfectatsController;
 use App\Http\Controllers\AlertantController;
 use App\Http\Controllers\IncidenciesController;
+<<<<<<< Updated upstream
+=======
 use App\Http\Controllers\MunicipisController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +44,7 @@ Route::get('/videos', function () {
 Route::resource('alertants', AlertantController::class);
 Route::resource('afectats', AfectatsController::class);
 Route::resource('incidencies', IncidenciesController::class);
+<<<<<<< Updated upstream
+=======
 Route::resource('municipis', MunicipisController::class);
+>>>>>>> Stashed changes
