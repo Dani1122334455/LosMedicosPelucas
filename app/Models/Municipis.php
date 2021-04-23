@@ -35,8 +35,6 @@ class Municipis extends Model
     {
         return $this->hasMany(Incidencies::class, 'municipis_id');
     }
-<<<<<<< Updated upstream
-=======
 
     /**
      * Get the user that owns the Municipis
@@ -47,5 +45,4 @@ class Municipis extends Model
     {
         return $this->belongsTo(Comarques::class, 'comarques_id');
     }
->>>>>>> Stashed changes
 }

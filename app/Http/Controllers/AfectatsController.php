@@ -17,13 +17,6 @@ class AfectatsController extends Controller
     public function index()
     {
         // $afectats = Afectats::all();
-
-        $afectats = Afectats::paginate(5);
-
-        $sexes = Sexes::all();
-
-        return view('afectats.afectats', compact('afectats', 'sexes'));
-
         // $afectats = Afectats::paginate(5);
 
         // $sexes = Sexes::all();
@@ -31,7 +24,6 @@ class AfectatsController extends Controller
         // return view('afectats.afectats', compact('afectats', 'sexes'));
 
         return view('afectats.afectats_vue');
-
     }
 
     /**

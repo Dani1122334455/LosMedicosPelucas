@@ -14,11 +14,6 @@ class ComarquesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index()
-    {
-        //
-
     public function index(Request $request)
     {
 
@@ -28,7 +23,6 @@ class ComarquesController extends Controller
          $provincies = Provincies::all();
 
          return view('comarques.comarques', compact('comarques', 'provincies'));
-
     }
 
     /**
@@ -38,13 +32,11 @@ class ComarquesController extends Controller
      */
     public function create()
     {
-
         $comarques = Comarques::all();
 
         $provincies = Provincies::all();
 
         return view('comarques.create', compact('comarques','provincies'));
-
     }
 
     /**
@@ -55,9 +47,6 @@ class ComarquesController extends Controller
      */
     public function store(Request $request)
     {
-
-        //
-
         $comarque = new Comarques();
 
         $comarque->id = 79;
@@ -67,7 +56,6 @@ class ComarquesController extends Controller
         $comarque->save();
 
         return redirect()->action([ComarquesController::class,'index']);
-
     }
 
     /**
@@ -76,11 +64,7 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-
-    public function show(Comarques $comarques)
-
     public function show(Comarques $comarque)
-
     {
         //
     }
@@ -91,11 +75,6 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-
-    public function edit(Comarques $comarques)
-    {
-        //
-
     public function edit(Comarques $comarque)
     {
         //
@@ -105,7 +84,6 @@ class ComarquesController extends Controller
         $provincies = Provincies::all();
 
         return view('comarques.update', compact('comarques','provincies', 'comarque'));
-
     }
 
     /**
@@ -115,11 +93,6 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-
-    public function update(Request $request, Comarques $comarques)
-    {
-        //
-
     public function update(Request $request, Comarques $comarque)
     {
         $comarque->update([
@@ -130,7 +103,6 @@ class ComarquesController extends Controller
         ]);
 
         return redirect()->action([ComarquesController::class,'index']);
-
     }
 
     /**
@@ -139,16 +111,11 @@ class ComarquesController extends Controller
      * @param  \App\Models\Comarques  $comarques
      * @return \Illuminate\Http\Response
      */
-
-    public function destroy(Comarques $comarques)
-    {
-
     public function destroy(Comarques $comarque)
     {
         //
         $comarque->delete();
 
         return redirect()->action([ComarquesController::class, 'index']);
-
     }
 }
