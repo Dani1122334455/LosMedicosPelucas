@@ -49,8 +49,10 @@
                         <td>{{ afectat.cip }}</td>
                         <td>{{ afectat.nom }}</td>
                         <td>{{ afectat.edat }}</td>
+                        <td v-if="afectat.sexes_id == 1">Home</td>
+                        <td v-else>Dona</td>
                         <!-- <td>{{ afectat.sexes.sexe }}</td> -->
-                        <td>{{ afectat.sexes_id }}</td>
+                        <!-- <td>{{ afectat.sexes_id }}</td> -->
                         <td>
                             <button type="submit" class="btn btn-danger float-right ml-1" @click="confirmDeleteAfectat(afectat)"
                             data-toggle="modal" data-target="#exampleModal">
@@ -89,7 +91,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" @click="deleteAfectat()">Esborrar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Tancar</button>
       </div>
     </div>
   </div>
@@ -113,25 +115,25 @@
               <div class="col-sm-11">
                 <input type="text" class="form-control" id="telefon" name="telefon"
                 maxlength="9" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                        v-model="afectat.telefon">
+                        v-model="afectat.telefon" ref="telefon">
               </div>
             </div>
             <div class="form-group row">
                 <label for="cip" class="col-sm-1 col-form-label">CIP</label>
                 <div class="col-sm-11">
-                  <input type="text" class="form-control" id="cip" name="cip" v-model="afectat.cip">
+                  <input type="text" class="form-control" id="cip" name="cip" v-model="afectat.cip" ref="cip">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="nom" class="col-sm-1 col-form-label">Nom</label>
                 <div class="col-sm-11">
-                  <input type="text" class="form-control" id="nom" name="nom" v-model="afectat.nom">
+                  <input type="text" class="form-control" id="nom" name="nom" v-model="afectat.nom" ref="nom">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="cognoms" class="col-sm-1 col-form-label">Cognoms</label>
                 <div class="col-sm-11">
-                  <input type="text" class="form-control" id="cognoms" name="cognoms" v-model="afectat.cognoms">
+                  <input type="text" class="form-control" id="cognoms" name="cognoms" v-model="afectat.cognoms" ref="cognoms">
                 </div>
             </div>
             <div class="form-group row">
@@ -139,19 +141,19 @@
               <div class="col-sm-11">
                 <input type="text" class="form-control" id="edat" name="edat"
                 maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                        v-model="afectat.edat">
+                        v-model="afectat.edat" ref="edat">
               </div>
             </div>
             <div class="form-group row">
                 <label for="sexes_id" class="col-sm-1 col-form-label">Sexe</label>
                 <div class="col-sm-11">
-                    <input type="text" class="form-control" id="sexes_id" name="sexes_id" v-model="afectat.sexes_id">
+                    <input type="text" class="form-control" id="sexes_id" name="sexes_id" v-model="afectat.sexes_id" ref="sexes_id">
                 </div>
             </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+        <button type="button" class="btn btn-secondary" @click="tancarModal()" data-dismiss="modal">Tancar</button>
         <button v-if="insert" type="button" class="btn btn-primary" @click="insertAfectat()">Afegir</button>
         <button v-else type="button" class="btn btn-primary" @click="updateAfectat()">Modificar</button>
       </div>
@@ -212,6 +214,14 @@
                         $('#deleteModal').modal('hide');
                     })
             },
+            tancarModal(){
+                this.$refs.telefon.value = null;
+                this.$refs.cip.value = null;
+                this.$refs.nom.value = null;
+                this.$refs.cognoms.value = null;
+                this.$refs.edat.value = null;
+                this.$refs.sexes_id.value = null;
+            },
             createAfectat(){
                 this.insert = true;
                 $('#cicleModal').modal('show');
@@ -233,9 +243,12 @@
                     })
             },
             editAfectat(afectat){
+                let me = this;
+
                 this.insert = false;
                 this.afectat = afectat;
                 $('#cicleModal').modal('show');
+                me.tancarModal();
             },
             updateAfectat(){
                 let me = this;
