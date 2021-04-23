@@ -35,12 +35,12 @@ class ComarquesController extends Controller
 
         $request->session()->flashInput($request->input());
 
-         $comarques = Comarques::paginate(5);
+        // $comarques = Comarques::paginate(5);
 
 
-         $provincies = Provincies::all();
+        $provincies = Provincies::all();
 
-         return view('comarques.comarques', compact('comarques', 'provincies'));
+        return view('comarques.comarques', compact('comarques', 'provincies'));
     }
 
     /**
