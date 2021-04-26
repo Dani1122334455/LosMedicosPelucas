@@ -27,6 +27,7 @@ class AlertantController extends Controller
         $alertants = Alertant::where('municipis_id', '=', $cicleId)
                                 ->orderBy('nom',$direction='asc')
                                 ->paginate(4);
+                                $alertants->appends(['inputCicles' => $cicleId]);
         }
         else{
         $alertants = Alertant::orderBy('nom',$direction='asc')

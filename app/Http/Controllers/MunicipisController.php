@@ -24,6 +24,7 @@ class MunicipisController extends Controller
         $municipis = Municipis::where('comarques_id', '=', $cicleId)
                                 ->orderBy('id',$direction='asc')
                                 ->paginate(5);
+                                $municipis->appends(['inputCicles' => $cicleId]);
         }
         else{
         $municipis = Municipis::orderBy('id',$direction='asc')
