@@ -4,6 +4,12 @@
 
 @section('contenido')
 
+<script>
+    window.onload = function() {
+        $('#sidebar, #content').toggleClass('active');
+    }
+</script>
+
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
     <div class="py-4 px-3 mb-4 bg-light">
@@ -18,7 +24,7 @@
     <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Funciones</p>
 
     <ul class="nav flex-column bg-white mb-0">
-        <li class="nav-item">
+    <li class="nav-item">
             <a href="{{ url('/incidencies') }}" class="nav-link text-dark font-italic bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Incidencies
@@ -49,11 +55,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                <button onclick="window.location.href='{{ url('/admin') }}'" class="text-dark font-italic bg-light" style="padding: 0;
-                border: none;
-                background: none;">Atrás</button>
+            <a href="{{ url('/logout') }}" class="nav-link text-dark font-italic bg-light">
+                <i class="fas fa-sign-out-alt mr-3 text-primary fa-fw"></i>
+               Cerrar Sesion
             </a>
         </li>
     </ul>
@@ -62,14 +66,14 @@
 
 <div class="page-content p-6" id="content">
 <div class="container-fluid">
-
+<button id="sidebarCollapse" type="button" style="margin-top: 10px;" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-2"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
     <div class="card mt-2">
-        <h5 class="col-sm-2 mt-3 ml-1">Buscar</h5>
+        <h5 class="col-sm-2 mt-3 ml-1">Cercar per...</h5>
         <form action="{{ action([App\Http\Controllers\AlertantController::class, 'index']) }}">
             <div class="card-body">
                 <div class="form-row">
-                    <label for="cicle" class="col-sm-0 col-form-label">Municipi</label>
-                    <div class="col-sm-10">
+                    <label for="cicle" class="col-sm-2 col-form-label">Municipi</label>
+                    <div class="col-sm-8">
                         <select id="inputCicles" class="form-control" name="inputCicles">
                             <option selected value="0">Selecciona un municipi</option>
                             @foreach ($municipis as $municipi)
@@ -88,10 +92,8 @@
                         </select>
                     </div> --}}
 
-                    <div class="col-sm-1" style="float: right">
-                        <div class="col-sm-0">
-                            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"> Buscar</i></button>
-                        </div>
+                    <div class="col-sm-2">
+                            <button type="submit" class="btn btn-secondary float-right"><i class="fas fa-search"></i> Cercar</button>
                     </div>
                 </div>
             </form>
@@ -109,7 +111,7 @@
                     <th scope="col">Nom i cognoms</th>
                     <th scope="col">Adreça</th>
                     <th scope="col">Municipi</th>
-                    <th scope="col">Tipus alertant</th>
+                    <th scope="col">Tipus</th>
                   </tr>
                 </thead>
                 <tbody>
