@@ -19,7 +19,7 @@
 
                     <div class="col-sm-1" style="float: right">
                         <div class="col-sm-1">
-                            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"> Cercar</i></button>
+                            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i> Cercar</button>
                         </div>
                     </div>
 
@@ -49,8 +49,7 @@
                         <td>{{ afectat.cip }}</td>
                         <td>{{ afectat.nom }}</td>
                         <td>{{ afectat.edat }}</td>
-                        <!-- <td>{{ afectat.sexes.sexe }}</td> -->
-                        <td>{{ afectat.sexes_id }}</td>
+                        <td>{{ afectat.sexes.sexe }}</td>
                         <td>
                             <button type="submit" class="btn btn-danger float-right ml-1" @click="confirmDeleteAfectat(afectat)"
                             data-toggle="modal" data-target="#exampleModal">
@@ -89,7 +88,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" @click="deleteAfectat()">Esborrar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Tancar</button>
       </div>
     </div>
   </div>
@@ -113,25 +112,25 @@
               <div class="col-sm-11">
                 <input type="text" class="form-control" id="telefon" name="telefon"
                 maxlength="9" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                        v-model="afectat.telefon">
+                        v-model="afectat.telefon" ref="telefon">
               </div>
             </div>
             <div class="form-group row">
                 <label for="cip" class="col-sm-1 col-form-label">CIP</label>
                 <div class="col-sm-11">
-                  <input type="text" class="form-control" id="cip" name="cip" v-model="afectat.cip">
+                  <input type="text" class="form-control" id="cip" name="cip" v-model="afectat.cip" ref="cip">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="nom" class="col-sm-1 col-form-label">Nom</label>
                 <div class="col-sm-11">
-                  <input type="text" class="form-control" id="nom" name="nom" v-model="afectat.nom">
+                  <input type="text" class="form-control" id="nom" name="nom" v-model="afectat.nom" ref="nom">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="cognoms" class="col-sm-1 col-form-label">Cognoms</label>
                 <div class="col-sm-11">
-                  <input type="text" class="form-control" id="cognoms" name="cognoms" v-model="afectat.cognoms">
+                  <input type="text" class="form-control" id="cognoms" name="cognoms" v-model="afectat.cognoms" ref="cognoms">
                 </div>
             </div>
             <div class="form-group row">
@@ -139,13 +138,16 @@
               <div class="col-sm-11">
                 <input type="text" class="form-control" id="edat" name="edat"
                 maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                        v-model="afectat.edat">
+                        v-model="afectat.edat" ref="edat">
               </div>
             </div>
             <div class="form-group row">
                 <label for="sexes_id" class="col-sm-1 col-form-label">Sexe</label>
-                <div class="col-sm-11">
-                    <input type="text" class="form-control" id="sexes_id" name="sexes_id" v-model="afectat.sexes_id">
+                <div class="col-sm-11 mt-2">
+                    <select ref="seleccionado" class="form-control" v-model="afectat.sexes_id">
+                        <option v-for="sexesR in sexes" :key="sexesR.id" :value="sexesR.id"
+                        :selected="sexesR.id ==  afectat.sexes_id">{{ sexesR.sexe }}</option>
+                    </select>
                 </div>
             </div>
         </form>
@@ -167,6 +169,16 @@
     export default {
         data(){
             return{
+                sexes: [{
+                    id: '1',
+                    sexe: 'Home'
+                },
+                {
+                    id: '2',
+                    sexe: 'Dona'
+                },
+                ],
+
                 afectats: [],
                 afectat: {
                     id: '',
@@ -214,6 +226,16 @@
             },
             createAfectat(){
                 this.insert = true;
+                this.afectat = {
+                    id: '',
+                    telefon: '',
+                    cip: '',
+                    nom: '',
+                    cognoms: '',
+                    edat: '',
+                    te_cip: '',
+                    sexes_id: ''
+                };
                 $('#cicleModal').modal('show');
             },
             insertAfectat(){
@@ -238,6 +260,7 @@
                 $('#cicleModal').modal('show');
             },
             updateAfectat(){
+                this.seleccionado = this.$refs.seleccionado.value;
                 let me = this;
 
                 axios
@@ -246,6 +269,8 @@
                         console.log(response);
                         me.selectAfectats();
                         $('#cicleModal').modal('hide');
+
+
                     }).catch(function(error) {
                         console.log(error.response.status);
                         console.log(error.response.data);

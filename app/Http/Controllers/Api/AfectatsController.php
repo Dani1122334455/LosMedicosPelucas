@@ -18,7 +18,8 @@ class AfectatsController extends Controller
      */
     public function index()
     {
-        $afectats = Afectats::all();
+
+        $afectats = Afectats::with('sexes')->get();
 
         return AfectatsResource::collection($afectats);
     }
