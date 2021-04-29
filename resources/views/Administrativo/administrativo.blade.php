@@ -33,7 +33,7 @@
     <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <i class="fab fa-youtube mr-3 text-primary fa-fw"></i>
                 <button onclick="window.location.href='{{ url('/videos') }}'" class="text-dark font-italic bg-light" style="padding: 0;
                 border: none;
                 background: none;">Videos</button>
@@ -42,14 +42,14 @@
         <li class="nav-item">
             <a href="{{ url('/incidencies/create') }}" class="nav-link text-dark font-italic">
                 <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                        <input type="button" class="text-dark font-italic bg-light" value="Formulario" style="padding: 0;
+                        <input type="button" class="text-dark font-italic bg-light" value="Nova Incidencia" style="padding: 0;
                         border: none;
                         background: none;"/>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ url('/logout') }}" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                <i class="fas fa-sign-out-alt mr-3 text-primary fa-fw"></i>
                Cerrar Sesion
             </a>
         </li>
@@ -68,60 +68,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn-flotante" data-toggle="modal" data-target="#exampleModalCenter">
-    HelpBox
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">HelpBox</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-
-            <i style="#BFBFBF">(¿Cómo te llamas?)</i>
-            <p>What is your name?</p>
-
-            <i style="#BFBFBF">(¿Cuántos años tienes?)</i>
-            <p>How old are you?</p>
-
-            <i style="#BFBFBF">(¿Eres un hombre una mujer o un niño?)</i>
-            <p>Are you a man, woman or child?</p>
-
-            <i style="#BFBFBF">(Dime tu documento de identidad, por favor)</i>
-            <p>Tell me your identity card, please</p>
-
-            <i style="#BFBFBF">(¿Me podrías decir un numero de teléfono?)</i>
-            <p>Could your give me a phone number?</p>
-
-            <i style="#BFBFBF">(¿En que municipio te encuentras?)</i>
-            <p>In what municipality are you located?</p>
-
-            <i style="#BFBFBF">(¿Cuál es la dirección?)</i>
-            <p>What is the address?</p>
-
-            <i style="#BFBFBF">(¿Qué ha pasado?)</i>
-            <p>What happened?</p>
-
-            <i style="#BFBFBF">(¿Cómo están las personas afectadas?)</i>
-            <p>How are the affected people?</p>
-
-            <i style="#BFBFBF">(¿Cuántos heridos hay?)</i>
-            <p>How many injured are there?</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-        </div>
-    </div>
-    </div>
-
 </div>
 @endsection

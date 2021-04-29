@@ -48,7 +48,7 @@
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic">
             <form>
-            <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+            <i class="fa fab fa-youtube mr-3 text-primary fa-fw"></i>
                     <input type="button" onclick="mostrar()" class="add-to-cart  text-dark font-italic bg-light" value="Formulario" style="padding: 0;
                     border: none;
                     background: none;"/>

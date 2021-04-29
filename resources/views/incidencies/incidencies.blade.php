@@ -24,33 +24,33 @@
     <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Funciones</p>
 
     <ul class="nav flex-column bg-white mb-0">
-    <li class="nav-item">
+        <li class="nav-item">
             <a href="{{ url('/incidencies') }}" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <i class="fas fa-exclamation-triangle mr-3 text-primary fa-fw"></i>
                 Incidencies
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ url('/alertants') }}" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <i class="fa fas fa-tty mr-3 text-primary fa-fw"></i>
                 Alertants
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ url('/afectats') }}" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <i class="fa fas fa-crutch mr-3 text-primary fa-fw"></i>
                 Afectats
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ url('/municipis') }}" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <i class="fa fas fa-building mr-3 text-primary fa-fw"></i>
                 Municipis
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ url('/comarques') }}" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                <i class="fa fas fa-route mr-3 text-primary fa-fw"></i>
                 Comarques
             </a>
         </li>

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sexes;
+use App\Models\Usuari;
 use App\Models\Alertant;
 use App\Models\Municipis;
 use App\Models\Incidencies;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\TipusAlertant;
 use App\Models\TipusIncidencia;
-use App\Models\Usuari;
+use App\Http\Controllers\Controller;
 
 class IncidenciesController extends Controller
 {
@@ -42,8 +44,10 @@ class IncidenciesController extends Controller
         $alertants = Alertant::all();
         $municipis = Municipis::all();
         $usuaris = Usuari::all();
+        $tipusAlertant = TipusAlertant::all();
+        $sexes = Sexes::all();
 
-        return view('incidencies.incidencies', compact('incidencies','alertants','municipis','usuaris'));
+        return view('incidencies.incidencies', compact('incidencies','alertants','municipis','usuaris','tipusAlertant','sexes'));
     }
 
     /**
@@ -58,8 +62,10 @@ class IncidenciesController extends Controller
         $tipusIncidencia = TipusIncidencia::all();
         $usuaris = Usuari::all();
         $alertants = Alertant::all();
+        $tipusAlertant = TipusAlertant::all();
+        $sexes = Sexes::all();
 
-        return view('incidencies.create', compact('municipis', 'tipusIncidencia','usuaris','alertants'));
+        return view('incidencies.create', compact('municipis', 'tipusIncidencia','usuaris','alertants','tipusAlertant','sexes'));
     }
 
     /**
@@ -117,8 +123,10 @@ class IncidenciesController extends Controller
         $tipusIncidencia = TipusIncidencia::all();
         $usuaris = Usuari::all();
         $alertants = Alertant::all();
+        $tipusAlertant = TipusAlertant::all();
+        $sexes = Sexes::all();
 
-        return view('incidencies.update', compact('municipis', 'tipusIncidencia','usuaris','alertants','incidency'));
+        return view('incidencies.update', compact('municipis', 'tipusIncidencia','usuaris','alertants','incidency','tipusAlertant','sexes'));
     }
 
     /**
