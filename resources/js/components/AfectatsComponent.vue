@@ -1,6 +1,63 @@
 <template>
 <main>
+
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center"><img src="logo.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+            <div class="media-body">
+                <h4 class="m-0">Isartus</h4>
+                <p class="font-weight-light text-muted mb-0">Administrativo</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Funciones</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+            <a href="incidencies" class="nav-link text-dark font-italic bg-light">
+                <i class="fas fa-exclamation-triangle mr-3 text-primary fa-fw"></i>
+                Incidencies
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="alertants" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fas fa-tty mr-3 text-primary fa-fw"></i>
+                Alertants
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="afectats" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fas fa-crutch mr-3 text-primary fa-fw"></i>
+                Afectats
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="municipis" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fas fa-building mr-3 text-primary fa-fw"></i>
+                Municipis
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="comarques" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fas fa-route mr-3 text-primary fa-fw"></i>
+                Comarques
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="logout" class="nav-link text-dark font-italic bg-light">
+                <i class="fas fa-sign-out-alt mr-3 text-primary fa-fw"></i>
+               Cerrar Sesion
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- End vertical navbar -->
+
+<div class="page-content p-6" id="content">
 <div class="container-fluid">
+    <button id="sidebarCollapse" type="button" style="margin-top: 10px;" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-2"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
     <div class="card mt-2">
         <h5 class="col-sm-3 mt-3 ml-1">Cercar per...</h5>
         <!-- <form action="{{ action([App\Http\Controllers\AfectatsController::class, 'index']) }}"> -->
@@ -63,11 +120,14 @@
 
         </div>
     </div>
+</div>
 
 
 <!-- <a href="{{ url('afectats/create') }}" class="btn btn-primary mt-2 mb-2"  style="float: right"><i class="fa fa-plus-circle"
     aria-hidden="true"></i> Nou afectat</a> -->
-<button class="btn btn-primary mt-2 mb-2" style="float: right" @click="createAfectat()">
+<button class="btn btn-primary mt-2 mb-2" style="float: right; position: fixed;
+            right: 20px;
+            bottom: 20px;" @click="createAfectat()">
     <i class="fa fa-plus-circle"
         aria-hidden="true"></i> Nou Afectat
 </button>
@@ -166,6 +226,10 @@
 </template>
 
 <script>
+    window.onload = function() {
+        $('#sidebar, #content').toggleClass('active');
+    }
+
     export default {
         data(){
             return{

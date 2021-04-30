@@ -2010,9 +2010,80 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+window.onload = function () {
+  $('#sidebar, #content').toggleClass('active');
+};
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      sexes: [{
+        id: '1',
+        sexe: 'Home'
+      }, {
+        id: '2',
+        sexe: 'Dona'
+      }],
       afectats: [],
       afectat: {
         id: '',
@@ -2054,6 +2125,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     createAfectat: function createAfectat() {
       this.insert = true;
+      this.afectat = {
+        id: '',
+        telefon: '',
+        cip: '',
+        nom: '',
+        cognoms: '',
+        edat: '',
+        te_cip: '',
+        sexes_id: ''
+      };
       $('#cicleModal').modal('show');
     },
     insertAfectat: function insertAfectat() {
@@ -2073,6 +2154,7 @@ __webpack_require__.r(__webpack_exports__);
       $('#cicleModal').modal('show');
     },
     updateAfectat: function updateAfectat() {
+      this.seleccionado = this.$refs.seleccionado.value;
       var me = this;
       axios.put('/afectats/' + me.afectat.id, me.afectat).then(function (response) {
         console.log(response);
@@ -2163,6 +2245,23 @@ Vue.component('afectats-component', __webpack_require__(/*! ./components/Afectat
 
 var app = new Vue({
   el: '#app'
+});
+
+/***/ }),
+
+/***/ "./resources/js/app2.js":
+/*!******************************!*\
+  !*** ./resources/js/app2.js ***!
+  \******************************/
+/***/ (() => {
+
+var modal = document.querySelector('.modal');
+var eleminarBtns = document.querySelectorAll(".delete");
+eleminarBtns.forEach(function (boto) {
+  boto.addEventListener('click', function () {
+    document.querySelector(".modal-body").innerHTML = "Estas segur que vols esborrar l'afectat " + boto.dataset.sigles + "?";
+    document.querySelector(".delete-form").action = boto.dataset.action;
+  });
 });
 
 /***/ }),
@@ -34770,19 +34869,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./node_modules/popper.js/dist/esm/popper.js":
 /*!***************************************************!*\
   !*** ./node_modules/popper.js/dist/esm/popper.js ***!
@@ -37769,75 +37855,81 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "card mt-2 mb-1" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [_vm._v("Afectats")]),
-          _vm._v(" "),
-          _c("table", { staticClass: "table mt-2" }, [
-            _vm._m(1),
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "page-content p-6", attrs: { id: "content" } }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "card mt-2 mb-1" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [_vm._v("Afectats")]),
             _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.afectats, function(afectat) {
-                return _c("tr", { key: afectat.id }, [
-                  _c("td", [_vm._v(_vm._s(afectat.id))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(afectat.telefon))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(afectat.cip))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(afectat.nom))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(afectat.edat))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(afectat.sexes_id))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger float-right ml-1",
-                        attrs: {
-                          type: "submit",
-                          "data-toggle": "modal",
-                          "data-target": "#exampleModal"
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.confirmDeleteAfectat(afectat)
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "fas fa-trash" }),
-                        _vm._v(" Esborrar")
-                      ]
-                    ),
+            _c("table", { staticClass: "table mt-2" }, [
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.afectats, function(afectat) {
+                  return _c("tr", { key: afectat.id }, [
+                    _c("td", [_vm._v(_vm._s(afectat.id))]),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-secondary float-right ml-1",
-                        attrs: { type: "submit" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editAfectat(afectat)
+                    _c("td", [_vm._v(_vm._s(afectat.telefon))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(afectat.cip))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(afectat.nom))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(afectat.edat))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(afectat.sexes.sexe))]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-danger float-right ml-1",
+                          attrs: {
+                            type: "submit",
+                            "data-toggle": "modal",
+                            "data-target": "#exampleModal"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.confirmDeleteAfectat(afectat)
+                            }
                           }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "fas fa-edit" }),
-                        _vm._v(" Editar")
-                      ]
-                    )
+                        },
+                        [
+                          _c("i", { staticClass: "fas fa-trash" }),
+                          _vm._v(" Esborrar")
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-secondary float-right ml-1",
+                          attrs: { type: "submit" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editAfectat(afectat)
+                            }
+                          }
+                        },
+                        [
+                          _c("i", { staticClass: "fas fa-edit" }),
+                          _vm._v(" Editar")
+                        ]
+                      )
+                    ])
                   ])
-                ])
-              }),
-              0
-            )
+                }),
+                0
+              )
+            ])
           ])
         ])
       ]),
@@ -37874,7 +37966,7 @@ var render = function() {
             { staticClass: "modal-dialog", attrs: { role: "document" } },
             [
               _c("div", { staticClass: "modal-content" }, [
-                _vm._m(2),
+                _vm._m(4),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-body" }, [
                   _c("p", [
@@ -37928,7 +38020,7 @@ var render = function() {
             { staticClass: "modal-dialog-lg", attrs: { role: "document" } },
             [
               _c("div", { staticClass: "modal-content" }, [
-                _vm._m(3),
+                _vm._m(5),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-body" }, [
                   _c("form", [
@@ -37952,6 +38044,7 @@ var render = function() {
                               expression: "afectat.telefon"
                             }
                           ],
+                          ref: "telefon",
                           staticClass: "form-control",
                           attrs: {
                             type: "text",
@@ -37998,6 +38091,7 @@ var render = function() {
                               expression: "afectat.cip"
                             }
                           ],
+                          ref: "cip",
                           staticClass: "form-control",
                           attrs: { type: "text", id: "cip", name: "cip" },
                           domProps: { value: _vm.afectat.cip },
@@ -38033,6 +38127,7 @@ var render = function() {
                               expression: "afectat.nom"
                             }
                           ],
+                          ref: "nom",
                           staticClass: "form-control",
                           attrs: { type: "text", id: "nom", name: "nom" },
                           domProps: { value: _vm.afectat.nom },
@@ -38068,6 +38163,7 @@ var render = function() {
                               expression: "afectat.cognoms"
                             }
                           ],
+                          ref: "cognoms",
                           staticClass: "form-control",
                           attrs: {
                             type: "text",
@@ -38111,6 +38207,7 @@ var render = function() {
                               expression: "afectat.edat"
                             }
                           ],
+                          ref: "edat",
                           staticClass: "form-control",
                           attrs: {
                             type: "text",
@@ -38143,36 +38240,55 @@ var render = function() {
                         [_vm._v("Sexe")]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-11" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.afectat.sexes_id,
-                              expression: "afectat.sexes_id"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "sexes_id",
-                            name: "sexes_id"
-                          },
-                          domProps: { value: _vm.afectat.sexes_id },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
+                      _c("div", { staticClass: "col-sm-11 mt-2" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.afectat.sexes_id,
+                                expression: "afectat.sexes_id"
                               }
-                              _vm.$set(
-                                _vm.afectat,
-                                "sexes_id",
-                                $event.target.value
-                              )
+                            ],
+                            ref: "seleccionado",
+                            staticClass: "form-control",
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.afectat,
+                                  "sexes_id",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              }
                             }
-                          }
-                        })
+                          },
+                          _vm._l(_vm.sexes, function(sexesR) {
+                            return _c(
+                              "option",
+                              {
+                                key: sexesR.id,
+                                domProps: {
+                                  value: sexesR.id,
+                                  selected: sexesR.id == _vm.afectat.sexes_id
+                                }
+                              },
+                              [_vm._v(_vm._s(sexesR.sexe))]
+                            )
+                          }),
+                          0
+                        )
                       ])
                     ])
                   ])
@@ -38229,6 +38345,160 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "vertical-nav bg-white", attrs: { id: "sidebar" } },
+      [
+        _c("div", { staticClass: "py-4 px-3 mb-4 bg-light" }, [
+          _c("div", { staticClass: "media d-flex align-items-center" }, [
+            _c("img", {
+              staticClass: "mr-3 rounded-circle img-thumbnail shadow-sm",
+              attrs: { src: "logo.png", alt: "...", width: "65" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "media-body" }, [
+              _c("h4", { staticClass: "m-0" }, [_vm._v("Isartus")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "font-weight-light text-muted mb-0" }, [
+                _vm._v("Administrativo")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticClass:
+              "text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
+          },
+          [_vm._v("Funciones")]
+        ),
+        _vm._v(" "),
+        _c("ul", { staticClass: "nav flex-column bg-white mb-0" }, [
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link text-dark font-italic bg-light",
+                attrs: { href: "incidencies" }
+              },
+              [
+                _c("i", {
+                  staticClass:
+                    "fas fa-exclamation-triangle mr-3 text-primary fa-fw"
+                }),
+                _vm._v("\n                Incidencies\n            ")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link text-dark font-italic bg-light",
+                attrs: { href: "alertants" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fas fa-tty mr-3 text-primary fa-fw"
+                }),
+                _vm._v("\n                Alertants\n            ")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link text-dark font-italic bg-light",
+                attrs: { href: "afectats" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fas fa-crutch mr-3 text-primary fa-fw"
+                }),
+                _vm._v("\n                Afectats\n            ")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link text-dark font-italic bg-light",
+                attrs: { href: "municipis" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fas fa-building mr-3 text-primary fa-fw"
+                }),
+                _vm._v("\n                Municipis\n            ")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link text-dark font-italic bg-light",
+                attrs: { href: "comarques" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fas fa-route mr-3 text-primary fa-fw"
+                }),
+                _vm._v("\n                Comarques\n            ")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link text-dark font-italic bg-light",
+                attrs: { href: "logout" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-sign-out-alt mr-3 text-primary fa-fw"
+                }),
+                _vm._v("\n               Cerrar Sesion\n            ")
+              ]
+            )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-light bg-white rounded-pill shadow-sm px-4 mb-2",
+        staticStyle: { "margin-top": "10px" },
+        attrs: { id: "sidebarCollapse", type: "button" }
+      },
+      [
+        _c("i", { staticClass: "fa fa-bars mr-2" }),
+        _c("small", { staticClass: "text-uppercase font-weight-bold" }, [
+          _vm._v("Menu")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card mt-2" }, [
       _c("h5", { staticClass: "col-sm-3 mt-3 ml-1" }, [
         _vm._v("Cercar per...")
@@ -38273,11 +38543,7 @@ var staticRenderFns = [
                     staticClass: "btn btn-secondary",
                     attrs: { type: "submit" }
                   },
-                  [
-                    _c("i", { staticClass: "fas fa-search" }, [
-                      _vm._v(" Cercar")
-                    ])
-                  ]
+                  [_c("i", { staticClass: "fas fa-search" }), _vm._v(" Cercar")]
                 )
               ])
             ]
@@ -50633,8 +50899,7 @@ Vue.compile = compileToFunctions;
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
-/******/ 			"css/all": 0
+/******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -50682,9 +50947,9 @@ Vue.compile = compileToFunctions;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/all"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/all"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/all"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app2.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

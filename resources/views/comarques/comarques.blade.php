@@ -1,5 +1,7 @@
 @extends('templates.principal')
 
+@section('titulo', 'Comarques')
+
 @section('contenido')
 
 @include('partials.mensajes')

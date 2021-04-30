@@ -55,4 +55,14 @@ class Incidencies extends Model
     {
         return $this->belongsTo(Usuari::class, 'usuaris_id');
     }
+
+    /**
+     * Get all of the comments for the Incidencies
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function incidencies_has_recursos()
+    {
+        return $this->hasMany(Ambulancia::class, 'incidencies_id');
+    }
 }

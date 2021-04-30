@@ -7,6 +7,8 @@ use App\Http\Controllers\AlertantController;
 use App\Http\Controllers\ComarquesController;
 use App\Http\Controllers\IncidenciesController;
 use App\Http\Controllers\MunicipisController;
+use App\Http\Controllers\AmbulanciaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +46,5 @@ Route::resource('afectats', AfectatsController::class);
 Route::resource('incidencies', IncidenciesController::class);
 Route::resource('municipis', MunicipisController::class);
 Route::resource('comarques', ComarquesController::class);
+Route::resource('ambulancia', AmbulanciaController::class);
+
